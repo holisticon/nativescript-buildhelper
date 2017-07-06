@@ -1,0 +1,15 @@
+.idea/
+.awcache/
+.npmrc
+dist/
+node_modules/
+typings/
+test/app/*.js*
+test/target/
+test/specs/*.js*
+target/
+*.log
+*.tgz
+*.iml
+lib/*.js
+lib/*.js.map
