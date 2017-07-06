@@ -1,5 +1,6 @@
 # NativeScript Build Helper
 
+[![Build Status](https://travis-ci.org/holisticon/nativescript-buildhelper.svg?branch=master)](https://travis-ci.org/holisticon/nativescript-buildhelper)
 [![npm version](https://badge.fury.io/js/%40holisticon%2Fnativescript-buildhelper.svg)](https://badge.fury.io/js/%40holisticon%2Fnativescript-buildhelper)
 [![Issue Count](https://codeclimate.com/github/holisticon/nativescript-buildhelper/badges/issue_count.svg)](https://codeclimate.com/github/holisticon/nativescript-buildhelper) 
 [![Dependency Status](https://david-dm.org/holisticon/nativescript-buildhelper.svg)](https://david-dm.org/holisticon/nativescript-buildhelper) 
