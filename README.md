@@ -1,5 +1,7 @@
 # NativeScript build helper
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/holisticon/nativescript-buildhelper.svg)](https://greenkeeper.io/)
+
 Basic NPM package for helping on automate releasing of NativeScript Apps
 
 ** CURRENTLY A PRE-RELEASE **
