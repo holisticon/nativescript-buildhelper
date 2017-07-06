@@ -1,4 +1,9 @@
-# NativeScript build helper
+# NativeScript Build Helper
+
+[![npm version](https://badge.fury.io/js/%40holisticon%2Fangular-common.svg)](https://badge.fury.io/js/%40holisticon%2Fangular-common)
+[![Issue Count](https://codeclimate.com/github/holisticon/nativescript-buildhelper/badges/issue_count.svg)](https://codeclimate.com/github/holisticon/nativescript-buildhelper) 
+[![Dependency Status](https://david-dm.org/holisticon/nativescript-buildhelper.svg)](https://david-dm.org/holisticon/nativescript-buildhelper) 
+[![devDependency Status](https://david-dm.org/holisticon/nativescript-buildhelper/dev-status.svg)](https://david-dm.org/holisticon/nativescript-buildhelper#info=devDependencies)
 
 Basic NPM package for helping on automate releasing of NativeScript Apps
 
@@ -10,6 +15,18 @@ Basic NPM package for helping on automate releasing of NativeScript Apps
 * NativeScript 2.5+
 * Git versioning system
 * fastlane (if automatic upload is need)
+
+## Installation
+
+```
+npm install @holisticon/nativescript-buildhelper --save-dev
+```
+
+Or if you want to use the development version (nightly build), which maybe not stable!:
+
+```
+npm install @holisticon/nativescript-buildhelper@next --save-dev
+```
 
 ## Usage
 
