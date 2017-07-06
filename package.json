@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "description": "Basic NPM package for helping on automate releasing of NativeScript Apps",
   "bin": {
+    "tns-buildnumbering": "tns-buildnumbering.js",
     "tns-release": "tns-release.js",
     "tns-changelog": "tns-changelog.js",
     "tns-release-notes": "tns-release-notes.js"
