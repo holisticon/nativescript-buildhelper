@@ -11,5 +11,7 @@ target/
 *.log
 *.tgz
 *.iml
-lib/*.js
-lib/*.js.map
+lib/**/*.js
+lib/**/*.js.map
+test/**/*.js
+test/**/*.js.map

@@ -31,9 +31,10 @@ node {
     }
 
     stage('Test') {
-      //sh "npm run test && npm run e2e"
+      //sh "npm run test"
       //junit 'target/test-reports/TEST*.xml'
-      //junit 'target/e2e-reports/TEST*.xml'
+      sh "npm run e2e"
+      junit 'target/e2e-reports/TEST*.xml'
     }
 
     stage('Publish NPM snapshot') {
