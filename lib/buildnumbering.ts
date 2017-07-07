@@ -2,10 +2,16 @@
 import * as fs from 'fs';
 import * as xml2js from 'xml2js';
 import * as path from 'path';
+import * as util from 'util';
 import { exec } from 'child_process';
+
 // Adds the build number to app versioning
 //  e.g. release_notes.js 42 -> uses 42 as build number
+
 const ARGS = process.argv.slice(2);
+const DEBUG_ENV = 'holisticon_tns';
+
+let debugLog = util.debuglog(DEBUG_ENV);
 
 let xmlParser = new xml2js.Parser(),
   builder = new xml2js.Builder(),
@@ -19,12 +25,15 @@ console.log('Updating with build number: ' + buildNo);
 fs.stat(manifestPath, (error) => {
   if (!error) {
     let manifestXML = fs.readFileSync(manifestPath);
-    xmlParser.parseString(path.resolve('.', manifestPath), function (err, manifestData) {
+    debugLog('Using following manifest: ', manifestXML);
+    xmlParser.parseString(manifestXML, (err, manifestData) => {
       let appId = packageJSON.nativescript.id,
         version = packageJSON.version;
       manifestData.manifest.$['android:versionCode'] = buildNo;
       manifestData.manifest.$['android:versionName'] = version;
-      fs.writeFile(manifestPath, builder.buildObject(manifestData), function (err) {
+      let updatedManifest = builder.buildObject(manifestData);
+      debugLog('Updating manifest with: ', manifestXML);
+      fs.writeFile(manifestPath, updatedManifest, (err) => {
         if (err) throw err;
       });
     });
@@ -35,7 +44,7 @@ fs.stat(manifestPath, (error) => {
 
 fs.stat(plistPath, (error) => {
   if (!error) {
-    exec('/usr/libexec/PlistBuddy -c "Set :CFBundleVersion ' + buildNo + '" ' + path.resolve('.', plistPath), function (err) {
+    exec('/usr/libexec/PlistBuddy -c "Set :CFBundleVersion ' + buildNo + '" ' + path.resolve('.', plistPath), (err) => {
       if (err) {
         throw err;
       }
