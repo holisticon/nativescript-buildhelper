@@ -18,7 +18,8 @@ let xmlParser = new xml2js.Parser(),
   manifestPath = 'app/App_Resources/Android/AndroidManifest.xml',
   plistPath = 'app/App_Resources/iOS/Info.plist',
   buildNo = ARGS[0] || process.env['BUILD_NUMBER'] || 1,
-  packageJSON = require(path.resolve('.', 'package.json'));
+  packageJSON = require(path.resolve('.', 'package.json')),
+  version = packageJSON.version;
 
 console.log('Updating with build number: ' + buildNo);
 
@@ -27,8 +28,7 @@ fs.stat(manifestPath, (error) => {
     let manifestXML = fs.readFileSync(manifestPath);
     debugLog('Using following manifest: ', manifestXML);
     xmlParser.parseString(manifestXML, (err, manifestData) => {
-      let appId = packageJSON.nativescript.id,
-        version = packageJSON.version;
+      let appId = packageJSON.nativescript.id;
       manifestData.manifest.$['android:versionCode'] = buildNo;
       manifestData.manifest.$['android:versionName'] = version;
       let updatedManifest = builder.buildObject(manifestData);
@@ -45,6 +45,12 @@ fs.stat(manifestPath, (error) => {
 fs.stat(plistPath, (error) => {
   if (!error) {
     exec('/usr/libexec/PlistBuddy -c "Set :CFBundleVersion ' + buildNo + '" ' + path.resolve('.', plistPath), (err) => {
+      if (err) {
+        throw err;
+      }
+    });
+
+    exec('/usr/libexec/PlistBuddy -c "Set :CFBundleShortVersionString ' + version + '" ' + path.resolve('.', plistPath), (err) => {
       if (err) {
         throw err;
       }
