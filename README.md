@@ -5,6 +5,8 @@
 [![Dependency Status](https://david-dm.org/holisticon/nativescript-buildhelper.svg)](https://david-dm.org/holisticon/nativescript-buildhelper) 
 [![devDependency Status](https://david-dm.org/holisticon/nativescript-buildhelper/dev-status.svg)](https://david-dm.org/holisticon/nativescript-buildhelper#info=devDependencies)
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/holisticon/nativescript-buildhelper.svg)](https://greenkeeper.io/)
+
 Basic NPM package for helping on automate releasing of NativeScript Apps
 
 ** CURRENTLY A PRE-RELEASE **
