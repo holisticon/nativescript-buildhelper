@@ -1,5 +1,6 @@
 # NativeScript Build Helper
 
+[![Build Status](https://travis-ci.org/holisticon/nativescript-buildhelper.svg?branch=master)](https://travis-ci.org/holisticon/nativescript-buildhelper)
 [![npm version](https://badge.fury.io/js/%40holisticon%2Fnativescript-buildhelper.svg)](https://badge.fury.io/js/%40holisticon%2Fnativescript-buildhelper)
 [![Issue Count](https://codeclimate.com/github/holisticon/nativescript-buildhelper/badges/issue_count.svg)](https://codeclimate.com/github/holisticon/nativescript-buildhelper) 
 [![Dependency Status](https://david-dm.org/holisticon/nativescript-buildhelper.svg)](https://david-dm.org/holisticon/nativescript-buildhelper) 
@@ -41,3 +42,21 @@ The environmental variable you need to adjust is: <strong>TNS_ANDROID_SNAPSHOT</
 0 = Force Snapshots off always
 1 = Force snapshots on (including in debug mode)
 Unset = Snapshots only in Release mode
+
+### Advanced Usage
+
+#### Debugging
+
+If you need to debug the tests use the node-inspector:
+```
+npm run debug
+node-inspector --web-port=8282
+```
+
+You can then open chrome at *http://127.0.0.1:8282/?port=5858* for debugging.
+
+If you want to have verbose logging add NODE_DEBUG=holisticon_tns:
+
+```
+NODE_DEBUG=holisticon_tns node tns-buldnumbering
+```

@@ -1,28 +1,63 @@
 #!/usr/bin/env node
 import * as fs from 'fs';
 import * as xml2js from 'xml2js';
+import * as path from 'path';
+import * as util from 'util';
+import { exec } from 'child_process';
+
 // Adds the build number to app versioning
 //  e.g. release_notes.js 42 -> uses 42 as build number
+
 const ARGS = process.argv.slice(2);
+const DEBUG_ENV = 'holisticon_tns';
+
+let debugLog = util.debuglog(DEBUG_ENV);
 
 let xmlParser = new xml2js.Parser(),
-  builder = new xml2js.Builder();
-
-var manifestPath = __dirname + '/../app/App_Resources/Android/AndroidManifest.xml',
+  builder = new xml2js.Builder(),
+  manifestPath = 'app/App_Resources/Android/AndroidManifest.xml',
+  plistPath = 'app/App_Resources/iOS/Info.plist',
   buildNo = ARGS[0] || process.env['BUILD_NUMBER'] || 1,
-  packageJSON = require(__dirname + '/../package.json'),
-  manifestXML = fs.readFileSync(manifestPath);
+  packageJSON = require(path.resolve('.', 'package.json')),
+  version = packageJSON.version;
 
-xmlParser.parseString(manifestXML, function (err, manifestData) {
-  var appId = packageJSON.nativescript.id;
-  var version = packageJSON.version;
-  console.log('buildNo: ' + buildNo);
-  console.log('appId: ' + appId);
-  console.log('version: ' + version);
-  manifestData.manifest.$['android:versionCode'] = buildNo;
-  manifestData.manifest.$['android:versionName'] = version;
-  var xml = builder.buildObject(manifestData);
-  fs.writeFile(manifestPath, xml, function (err) {
-    if (err) throw err;
-  });
+console.log('Updating with build number: ' + buildNo);
+
+fs.stat(manifestPath, (error) => {
+  if (!error) {
+    let manifestXML = fs.readFileSync(manifestPath);
+    debugLog('Using following manifest: ', manifestXML);
+    xmlParser.parseString(manifestXML, (err, manifestData) => {
+      let appId = packageJSON.nativescript.id;
+      manifestData.manifest.$['android:versionCode'] = buildNo;
+      manifestData.manifest.$['android:versionName'] = version;
+      let updatedManifest = builder.buildObject(manifestData);
+      debugLog('Updating manifest with: ', manifestXML);
+      fs.writeFile(manifestPath, updatedManifest, (err) => {
+        if (err) throw err;
+      });
+    });
+  } else {
+    console.log('Skipping platform Android');
+  }
 });
+
+fs.stat(plistPath, (error) => {
+  if (!error) {
+    exec('/usr/libexec/PlistBuddy -c "Set :CFBundleVersion ' + buildNo + '" ' + path.resolve('.', plistPath), (err) => {
+      if (err) {
+        throw err;
+      }
+    });
+
+    exec('/usr/libexec/PlistBuddy -c "Set :CFBundleShortVersionString ' + version + '" ' + path.resolve('.', plistPath), (err) => {
+      if (err) {
+        throw err;
+      }
+    });
+  } else {
+    console.log('Skipping platform iOS');
+  }
+});
+
+

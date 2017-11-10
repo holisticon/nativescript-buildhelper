@@ -13,6 +13,7 @@
       "dom"
     ],
     "types": [
+      "jasmine",
       "node"
     ]
   },

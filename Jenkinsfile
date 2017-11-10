@@ -3,6 +3,9 @@ properties properties: [
   disableConcurrentBuilds()
 ]
 
+@Library('holisticon-build-library')
+def nodeJS = new de.holisticon.ci.jenkins.NodeJS()
+
 node {
   def buildNumber = env.BUILD_NUMBER
   def branchName = env.BRANCH_NAME
@@ -31,15 +34,14 @@ node {
     }
 
     stage('Test') {
-      //sh "npm run test && npm run e2e"
+      //sh "npm run test"
       //junit 'target/test-reports/TEST*.xml'
-      //junit 'target/e2e-reports/TEST*.xml'
+      sh "npm run e2e"
+      junit 'target/e2e-reports/TEST*.xml'
     }
 
     stage('Publish NPM snapshot') {
-      def currentVersion = sh(returnStdout: true, script: "npm version | grep \"{\" | tr -s ':'  | cut -d \"'\" -f 4").trim()
-      def newVersion = "${currentVersion}-${branchName}-${buildNumber}"
-      sh "npm version ${newVersion} --no-git-tag-version && npm publish --tag next"
+      nodeJS.publishSnapshot('.', "${buildNumber}", "${branchName}")
     }
 
   } catch (e) {
