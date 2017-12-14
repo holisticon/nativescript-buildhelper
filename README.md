@@ -29,7 +29,7 @@ Or if you want to use the development version (nightly build), which maybe not s
 npm install @holisticon/nativescript-buildhelper@next --save-dev
 ```
 
-## Usage
+## <a name="usage"></a> Usage
 
 For those who haven't deployed any apps in v2.4 of NativeScript; one of the new features that is turned on by default is SnapShots.    Now most the time this is a AWESOME thing, however occasionally this can cause issues.   For example I have one app of mine that this crashes at startup when using SnapShots.
 
@@ -41,9 +41,17 @@ The environmental variable you need to adjust is: <strong>TNS_ANDROID_SNAPSHOT</
 1 = Force snapshots on (including in debug mode)
 Unset = Snapshots only in Release mode
 
-### Advanced Usage
+### <a name="buildnumbering"></a> Build Numbering
 
-#### Debugging
+Use this command to append the build number to CFBundleVersion on iOS and to versionCode on Android:
+
+```
+tns-buildnumbering 42
+```
+
+## Advanced Usage
+
+### Debugging
 
 If you need to debug the tests use the node-inspector:
 ```
