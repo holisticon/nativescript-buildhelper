@@ -1,7 +1,8 @@
-# NativeScript Build Helper
+# NativeScript Build Helper ![apple](https://cdn3.iconfinder.com/data/icons/picons-social/57/16-apple-32.png) ![android](https://cdn4.iconfinder.com/data/icons/logos-3/228/android-32.png)
 
 [![Build Status](https://travis-ci.org/holisticon/nativescript-buildhelper.svg?branch=master)](https://travis-ci.org/holisticon/nativescript-buildhelper)
 [![npm version](https://badge.fury.io/js/%40holisticon%2Fnativescript-buildhelper.svg)](https://badge.fury.io/js/%40holisticon%2Fnativescript-buildhelper)
+[![Maintainability](https://api.codeclimate.com/v1/badges/ed77fd2de5888c6a3300/maintainability)](https://codeclimate.com/github/holisticon/nativescript-buildhelper/maintainability)
 [![Issue Count](https://codeclimate.com/github/holisticon/nativescript-buildhelper/badges/issue_count.svg)](https://codeclimate.com/github/holisticon/nativescript-buildhelper) 
 [![Dependency Status](https://david-dm.org/holisticon/nativescript-buildhelper.svg)](https://david-dm.org/holisticon/nativescript-buildhelper) 
 [![devDependency Status](https://david-dm.org/holisticon/nativescript-buildhelper/dev-status.svg)](https://david-dm.org/holisticon/nativescript-buildhelper#info=devDependencies)
