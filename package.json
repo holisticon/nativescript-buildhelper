@@ -33,7 +33,7 @@
     "yargs": "10.0.3"
   },
   "devDependencies": {
-    "@types/core-js": "0.9.37",
+    "@types/core-js": "0.9.44",
     "@types/jasmine": "2.8.0",
     "@types/node": "8.0.54",
     "conventional-changelog-cli": "1.2.0",
