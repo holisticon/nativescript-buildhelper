@@ -30,7 +30,7 @@
   },
   "dependencies": {
     "xml2js": "0.4.16",
-    "yargs": "10.1.1"
+    "yargs": "11.0.0"
   },
   "devDependencies": {
     "@types/core-js": "0.9.44",
