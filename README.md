@@ -7,7 +7,7 @@
 [![Dependency Status](https://david-dm.org/holisticon/nativescript-buildhelper.svg)](https://david-dm.org/holisticon/nativescript-buildhelper) 
 [![devDependency Status](https://david-dm.org/holisticon/nativescript-buildhelper/dev-status.svg)](https://david-dm.org/holisticon/nativescript-buildhelper#info=devDependencies)
 
-Basic NPM package for helping on automate releasing of NativeScript Apps
+This NPM package helps automate the release of NativeScript applications
 
 ** CURRENTLY A PRE-RELEASE **
 
@@ -15,7 +15,7 @@ Basic NPM package for helping on automate releasing of NativeScript Apps
 
 * Node 4+
 * NativeScript 2.5+
-* Git versioning system
+* Git version control
 * fastlane (if automatic upload is need)
 
 ## Installation
