@@ -15,8 +15,8 @@ let debugLog = util.debuglog(DEBUG_ENV);
 
 let xmlParser = new xml2js.Parser(),
   builder = new xml2js.Builder(),
-  manifestPath = process.env.MANIFESTPATH || 'app/App_Resources/Android/AndroidManifest.xml',
-  plistPath = process.env.PLISTPATH || 'app/App_Resources/iOS/Info.plist',
+  manifestPath = process.env['MANIFESTPATH'] || 'app/App_Resources/Android/AndroidManifest.xml',
+  plistPath = process.env['PLISTPATH'] || 'app/App_Resources/iOS/Info.plist',
   buildNo = ARGS[0] || process.env['BUILD_NUMBER'] || 1,
   packageJSON = require(path.resolve('.', 'package.json')),
   version = packageJSON.version;
