@@ -1,14 +1,13 @@
-# NativeScript Build Helper
+# NativeScript Build Helper ![apple](https://cdn3.iconfinder.com/data/icons/picons-social/57/16-apple-32.png) ![android](https://cdn4.iconfinder.com/data/icons/logos-3/228/android-32.png)
 
 [![Build Status](https://travis-ci.org/holisticon/nativescript-buildhelper.svg?branch=master)](https://travis-ci.org/holisticon/nativescript-buildhelper)
 [![npm version](https://badge.fury.io/js/%40holisticon%2Fnativescript-buildhelper.svg)](https://badge.fury.io/js/%40holisticon%2Fnativescript-buildhelper)
+[![Maintainability](https://api.codeclimate.com/v1/badges/ed77fd2de5888c6a3300/maintainability)](https://codeclimate.com/github/holisticon/nativescript-buildhelper/maintainability)
 [![Issue Count](https://codeclimate.com/github/holisticon/nativescript-buildhelper/badges/issue_count.svg)](https://codeclimate.com/github/holisticon/nativescript-buildhelper) 
 [![Dependency Status](https://david-dm.org/holisticon/nativescript-buildhelper.svg)](https://david-dm.org/holisticon/nativescript-buildhelper) 
 [![devDependency Status](https://david-dm.org/holisticon/nativescript-buildhelper/dev-status.svg)](https://david-dm.org/holisticon/nativescript-buildhelper#info=devDependencies)
 
-[![Greenkeeper badge](https://badges.greenkeeper.io/holisticon/nativescript-buildhelper.svg)](https://greenkeeper.io/)
-
-Basic NPM package for helping on automate releasing of NativeScript Apps
+This NPM package helps automate the release of NativeScript applications
 
 ** CURRENTLY A PRE-RELEASE **
 
@@ -16,7 +15,7 @@ Basic NPM package for helping on automate releasing of NativeScript Apps
 
 * Node 4+
 * NativeScript 2.5+
-* Git versioning system
+* Git version control
 * fastlane (if automatic upload is need)
 
 ## Installation
@@ -31,7 +30,7 @@ Or if you want to use the development version (nightly build), which maybe not s
 npm install @holisticon/nativescript-buildhelper@next --save-dev
 ```
 
-## Usage
+## <a name="usage"></a> Usage
 
 For those who haven't deployed any apps in v2.4 of NativeScript; one of the new features that is turned on by default is SnapShots.    Now most the time this is a AWESOME thing, however occasionally this can cause issues.   For example I have one app of mine that this crashes at startup when using SnapShots.
 
@@ -43,9 +42,17 @@ The environmental variable you need to adjust is: <strong>TNS_ANDROID_SNAPSHOT</
 1 = Force snapshots on (including in debug mode)
 Unset = Snapshots only in Release mode
 
-### Advanced Usage
+### <a name="buildnumbering"></a> Build Numbering
 
-#### Debugging
+Use this command to append the build number to CFBundleVersion on iOS and to versionCode on Android:
+
+```
+tns-buildnumbering 42
+```
+
+## Advanced Usage
+
+### Debugging
 
 If you need to debug the tests use the node-inspector:
 ```
