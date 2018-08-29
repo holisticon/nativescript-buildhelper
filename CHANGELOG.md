@@ -1,3 +1,20 @@
+<a name="0.3.0"></a>
+# [0.3.0](https://github.com/holisticon/nativescript-buildhelper/compare/v0.2.1...v0.3.0) (2018-08-29)
+
+
+### Bug Fixes
+
+* **package:** update yargs to version 10.1.1 ([94f3014](https://github.com/holisticon/nativescript-buildhelper/commit/94f3014))
+* **package:** update yargs to version 11.0.0 ([65798a0](https://github.com/holisticon/nativescript-buildhelper/commit/65798a0))
+* **package:** update yargs to version 12.0.1 ([e3d1ddd](https://github.com/holisticon/nativescript-buildhelper/commit/e3d1ddd))
+
+
+### Features
+
+* **TypeScript:** Use typescript 2.2 ([d181567](https://github.com/holisticon/nativescript-buildhelper/commit/d181567))
+
+
+
 <a name="0.2.1"></a>
 ## [0.2.1](https://github.com/holisticon/nativescript-buildhelper/compare/v0.2.0...v0.2.1) (2017-12-14)
 
