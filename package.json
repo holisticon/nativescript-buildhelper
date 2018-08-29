@@ -1,6 +1,6 @@
 {
   "name": "@holisticon/nativescript-buildhelper",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "description": "Basic NPM package for helping on automate releasing of NativeScript Apps",
   "bin": {
     "tns-buildnumbering": "tns-buildnumbering.js",
