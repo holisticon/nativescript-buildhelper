@@ -29,14 +29,21 @@ node {
     }
 
     stage('Build') {
-      nodeJS.nvmRun('clean');
-      nodeJS.nvmRun('build');
+      nodeJS.nvmRun('clean')
+      nodeJS.nvmRun('build')
     }
 
     stage('Test') {
       //sh "npm run test"
       //junit 'target/test-reports/TEST*.xml'
-      nodeJS.nvmRun('e2e');
+      nodeJS.nvmRun('e2e')
+      junit 'target/e2e-reports/TEST*.xml'
+    }
+
+    stage('Security Check') {
+      //sh "npm run test"
+      //junit 'target/test-reports/TEST*.xml'
+      nodeJS.nvm('audit')
       junit 'target/e2e-reports/TEST*.xml'
     }
 
