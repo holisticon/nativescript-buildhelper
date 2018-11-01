@@ -1,4 +1,7 @@
-<a name="0.3.0"></a>
+## [0.3.1](https://github.com/holisticon/nativescript-buildhelper/compare/v0.3.0...v0.3.1) (2018-11-01)
+
+
+
 # [0.3.0](https://github.com/holisticon/nativescript-buildhelper/compare/v0.2.1...v0.3.0) (2018-08-29)
 
 
@@ -15,12 +18,10 @@
 
 
 
-<a name="0.2.1"></a>
 ## [0.2.1](https://github.com/holisticon/nativescript-buildhelper/compare/v0.2.0...v0.2.1) (2017-12-14)
 
 
 
-<a name="0.2.0"></a>
 # [0.2.0](https://github.com/holisticon/nativescript-buildhelper/compare/a3339fc...v0.2.0) (2017-11-10)
 
 
