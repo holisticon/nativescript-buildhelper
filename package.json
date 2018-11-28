@@ -37,7 +37,7 @@
     "@microsoft/tsdoc": "0.11.0",
     "@types/core-js": "2.5.0",
     "@types/jasmine": "2.8.4",
-    "@types/node": "9.6.3",
+    "@types/node": "10.12.2",
     "conventional-changelog-cli": "2.0.7",
     "fs": "0.0.2",
     "ink-docstrap": "1.3.2",
